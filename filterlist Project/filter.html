@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+    h1{
+  text-align:center;
+}
+#filterInput{
+  width:90%;
+  border:none;
+  border-bottom:1px solid red;
+  height:15px;
+  font-size:16px;
+  text-align:center;
+  padding:8px;
+}
+ul li a {
+  text-decoration:none;
+}
+ul li{
+  list-style:none;
+}
+    
+    </style>
+</head>
+<body>
+    
+
+
+
+
+
+    <h1> My Contacts </h1>
+    <input type='text' id='filterInput' placeholder="search the person">
+    <ul id='names'> 
+      <li class="collection-header">
+        <h3> A </h3> 
+      </li>
+      <li class="collection-item"> 
+        <a href="#"> Avi </a>
+      </li>
+       <li class="collection-item"> 
+        <a href="#"> Alamin </a>
+      </li>
+       <li class="collection-item"> 
+        <a href="#"> Arman </a>
+      </li>
+       <li class="collection-header">
+        <h3> B </h3> 
+      </li>
+      <li class="collection-item"> 
+        <a href="#"> Brad </a>
+      </li>
+       <li class="collection-item"> 
+        <a href="#"> Babu </a>
+      </li>
+       <li class="collection-item"> 
+        <a href="#"> Bushra </a>
+      </li>
+       <li class="collection-header">
+        <h3> C </h3> 
+      </li>
+      <li class="collection-item"> 
+        <a href="#"> Chadda</a>
+      </li>
+       <li class="collection-item"> 
+        <a href="#"> Cat </a>
+      </li>
+       <li class="collection-item"> 
+        <a href="#"> Coffe </a>
+      </li> <li class="collection-header">
+        <h3> D </h3> 
+      </li>
+      <li class="collection-item"> 
+        <a href="#"> Dabid</a>
+      </li>
+       <li class="collection-item"> 
+        <a href="#"> Daud</a>
+      </li>
+       <li class="collection-item"> 
+        <a href="#"> Daniel </a>
+      </li>
+       
+    </ul>
+    
+
+
+
+    <script> 
+
+let filterInput=document.getElementById('filterInput');
+filterInput.addEventListener('keyup',filterNames);
+
+function filterNames(){
+ let filterValue=document.getElementById('filterInput').value.toUpperCase();
+ let ul =document.getElementById('names');
+  let li=document.querySelectorAll('.collection-item');
+  for(let i=0; i<li.length; i++)
+    {
+      let a = li[i].getElementsByTagName('a')[0];
+      if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1)
+         {
+           li[i].style.display='';
+         }
+      else{
+                   li[i].style.display='none';
+
+      }
+      
+    }
+    }
+
+    
+    </script>
+
+</body>
+</html>
